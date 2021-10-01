@@ -1,0 +1,43 @@
+{
+  "name": "mrwindwaker.github.io",
+  "version": "0.0.1",
+  "description": "MrWindwaker Github Page",
+  "main": "index.js",
+  "repository": "https://github.com/MrWindwaker/mrwindwaker.github.io.git",
+  "author": "MrWindwaker <lagr45@gmai.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "clean": "rimraf .cache dev-docs",
+    "dev": "npm run clean && parcel src/index.html --out-dir dev-docs",
+    "build": "rimraf docs && parcel build src/index.html --out-dir docs --no-source-maps"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.0",
+    "parcel-plugin-custom-dist-structure": "^1.1.16",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "sass": "^1.36.0",
+    "typescript": "^4.3.5"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "js",
+      "images": [
+        ".jpg",
+        ".png",
+        ".svg"
+      ],
+      ".css": "css"
+    },
+    "options": {
+      "development": true
+    }
+  }
+}
